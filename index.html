@@ -1,102 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>🎉 Happy Birthday 🎂</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
-      background-size: 400% 400%;
-      animation: gradient 10s ease infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🎉 Happy Birthday 🎂</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
 
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+  @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
+    animation: glow 2s ease-in-out infinite alternate;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    border-radius: 20px;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
+  }
+
+  /* ✅ Mobile Rotation Fix */
+  @media (max-width: 768px) and (orientation: portrait) {
+    body {
+      transform: rotate(90deg);
+      transform-origin: center center;
+      width: 100vh;
+      height: 100vw;
+      overflow: hidden;
     }
 
     .container {
-      position: fixed;
+      width: 100vh;
+      height: 100vw;
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
     }
 
     video {
-      position: absolute;
+      width: 100vh;
+      height: 100vw;
+      object-fit: cover;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
     }
 
     h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2.4em;
-      text-align: center;
-      text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
-      animation: glow 2s ease-in-out infinite alternate;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px 25px;
-      border-radius: 20px;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      font-size: 2em;
     }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399; }
-      to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
-    }
-
-    /* ✅ Perfect fullscreen rotation on mobile */
-    @media (max-width: 768px) {
-      html, body {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .container {
-        width: 100vh;
-        height: 100vw;
-        transform: rotate(90deg);
-        transform-origin: center center;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      video {
-        width: 100vh;
-        height: 100vw;
-        object-fit: cover;
-        transform: translate(-50%, -50%) scale(1.2); /* ✅ zooms to fill screen */
-      }
-
-      h1 {
-        transform: translate(-50%, -50%) rotate(-90deg);
-        font-size: 2em;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="container">
@@ -104,8 +106,7 @@
       <source src="Birthday.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
-    <h1>🎉 Happy Birthday! 🎂<br>Have a Wonderful Day 💖</h1>
+    <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day 💖</h1>
   </div>
 </body>
 </html>
