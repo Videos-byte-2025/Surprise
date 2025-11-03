@@ -1,112 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>🎉 Happy Birthday 🎂</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-  }
-
-  @keyframes gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-  h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2.5em;
-    text-align: center;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
-    animation: glow 2s ease-in-out infinite alternate;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 15px 25px;
-    border-radius: 20px;
-  }
-
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399; }
-    to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
-  }
-
-  /* ✅ Mobile Rotation Fix */
-  @media (max-width: 768px) and (orientation: portrait) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Happy Birthday 🎂</title>
+  <style>
     body {
-      transform: rotate(90deg);
-      transform-origin: center center;
-      width: 100vh;
-      height: 100vw;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
       overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
     }
 
-    .container {
-      width: 100vh;
-      height: 100vw;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    video {
-      width: 100vh;
-      height: 100vw;
-      object-fit: cover;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     h1 {
-      transform: translate(-50%, -50%) rotate(-90deg);
-      font-size: 2em;
+      color: white;
+      font-size: 4em;
+      text-align: center;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
+      animation: glow 2s ease-in-out infinite alternate;
+      z-index: 2;
+      position: relative;
     }
-  }
-</style>
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399; }
+      to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
+    }
+
+    video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    /* ✅ Rotate only on mobile */
+    @media (max-width: 768px) {
+      video {
+        width: 100vh;
+        height: 100vw;
+        transform: translate(-50%, -50%) rotate(90deg);
+        object-fit: cover;
+      }
+    }
+
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      background-color: #ff4d6d;
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background-color: #555;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-150px); opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <video autoplay muted loop playsinline>
-      <source src="Birthday.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day 💖</h1>
-  </div>
+  <!-- 🎬 Background video -->
+  <video autoplay muted loop playsinline>
+    <source src="birthday.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day! 💖</h1>
+
+  <!-- 🎈 Balloons -->
+  <div class="balloon" style="left:10%; background-color:#ff4d6d; animation-delay:0s;"></div>
+  <div class="balloon" style="left:30%; background-color:#ffb347; animation-delay:2s;"></div>
+  <div class="balloon" style="left:50%; background-color:#6a5acd; animation-delay:4s;"></div>
+  <div class="balloon" style="left:70%; background-color:#00ced1; animation-delay:1s;"></div>
+  <div class="balloon" style="left:90%; background-color:#32cd32; animation-delay:3s;"></div>
 </body>
 </html>
