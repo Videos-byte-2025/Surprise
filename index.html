@@ -39,7 +39,7 @@
       to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
     }
 
-    video {
+    img {
       position: fixed;
       top: 50%;
       left: 50%;
@@ -50,9 +50,9 @@
       z-index: -1;
     }
 
-    /* ✅ Rotate only on mobile */
+    /* ✅ Rotate image only on mobile */
     @media (max-width: 768px) {
-      video {
+      img {
         width: 100vh;
         height: 100vw;
         transform: translate(-50%, -50%) rotate(90deg);
@@ -89,11 +89,8 @@
   </style>
 </head>
 <body>
-  <!-- 🎬 Background video -->
-  <video autoplay muted loop playsinline>
-    <source src="birthday.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- 🖼️ Background image -->
+  <img src="Surprise.jpeg" alt="Happy Birthday Background">
 
   <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day! 💖</h1>
 
