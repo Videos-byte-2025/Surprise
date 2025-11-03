@@ -14,9 +14,6 @@
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
       background-size: 400% 400%;
       animation: gradient 10s ease infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     @keyframes gradient {
@@ -26,9 +23,11 @@
     }
 
     .container {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
 
@@ -36,10 +35,10 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 100vw;
+      height: 100vh;
       transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* ✅ makes it fill whole screen */
+      object-fit: cover; /* ✅ fills screen perfectly */
       z-index: -1;
     }
 
@@ -47,7 +46,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-90deg); /* ✅ always rotated */
+      transform: translate(-50%, -50%) rotate(-90deg); /* ✅ rotated sideways always */
       color: white;
       font-size: 2.4em;
       text-align: center;
@@ -64,26 +63,24 @@
       to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
     }
 
-    /* ✅ Mobile fix: rotate and fill screen completely */
+    /* ✅ Rotate entire layout on mobile */
     @media (max-width: 768px) {
-      body {
+      .container {
         transform: rotate(90deg);
         transform-origin: center center;
         width: 100vh;
         height: 100vw;
-        overflow: hidden;
       }
 
       video {
         width: 100vh;
         height: 100vw;
-        object-fit: cover; /* ✅ fills entire screen */
-        transform: translate(-50%, -50%);
+        object-fit: cover;
       }
 
       h1 {
+        transform: translate(-50%, -50%) rotate(-90deg);
         font-size: 2em;
-        transform: translate(-50%, -50%) rotate(-90deg); /* ✅ centered rotated title */
       }
     }
   </style>
