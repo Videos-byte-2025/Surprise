@@ -26,7 +26,9 @@
     }
 
     .container {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -39,7 +41,7 @@
       transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
-      object-fit: cover; /* ✅ fills full screen */
+      object-fit: cover;
       z-index: -1;
     }
 
@@ -64,30 +66,33 @@
       to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
     }
 
-    /* ✅ Rotate only on mobile, full coverage */
+    /* ✅ Perfect fullscreen rotation on mobile */
     @media (max-width: 768px) {
-      body {
-        transform: rotate(90deg);
-        transform-origin: center center;
-        width: 100vh;
-        height: 100vw;
+      html, body {
+        width: 100vw;
+        height: 100vh;
         overflow: hidden;
       }
 
       .container {
         width: 100vh;
         height: 100vw;
+        transform: rotate(90deg);
+        transform-origin: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       video {
         width: 100vh;
         height: 100vw;
-        object-fit: cover; /* ✅ full video coverage */
-        transform: translate(-50%, -50%) rotate(0deg);
+        object-fit: cover;
+        transform: translate(-50%, -50%) scale(1.2); /* ✅ zooms to fill screen */
       }
 
       h1 {
-        transform: translate(-50%, -50%) rotate(-90deg); /* ✅ rotated sideways */
+        transform: translate(-50%, -50%) rotate(-90deg);
         font-size: 2em;
       }
     }
