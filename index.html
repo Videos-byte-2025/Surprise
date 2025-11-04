@@ -5,39 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎉 Happy Birthday 🎂</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       height: 100vh;
       width: 100vw;
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      position: relative;
-
-      /* ✅ Background image here */
-      background-image: url("Birthday.jpg"); /* <-- replace with your exact file name */
+      background: url("Surprise.jpeg") no-repeat center center;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      /* gradient animation overlay */
-      background-blend-mode: overlay;
-      background-color: rgba(255, 255, 255, 0.1);
-      animation: gradient 10s ease infinite;
-      background-attachment: fixed;
-    }
-
-    @keyframes gradient {
-      0% {filter: brightness(1);}
-      50% {filter: brightness(1.2);}
-      100% {filter: brightness(1);}
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
     }
 
     h1 {
@@ -46,9 +24,7 @@
       text-align: center;
       text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
       animation: glow 2s ease-in-out infinite alternate;
-      z-index: 2;
-      position: relative;
-      padding: 10px;
+      z-index: 10;
     }
 
     @keyframes glow {
@@ -58,40 +34,4 @@
 
     .balloon {
       position: absolute;
-      width: 40px;
-      height: 50px;
-      background-color: #ff4d6d;
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    .balloon::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      width: 2px;
-      height: 20px;
-      background-color: #555;
-      transform: translateX(-50%);
-    }
-
-    @keyframes float {
-      0% { transform: translateY(100vh); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-150px); opacity: 0; }
-    }
-  </style>
-</head>
-<body>
-  <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day! 💖</h1>
-
-  <!-- 🎈 Balloons -->
-  <div class="balloon" style="left:10%; background-color:#ff4d6d; animation-delay:0s;"></div>
-  <div class="balloon" style="left:30%; background-color:#ffb347; animation-delay:2s;"></div>
-  <div class="balloon" style="left:50%; background-color:#6a5acd; animation-delay:4s;"></div>
-  <div class="balloon" style="left:70%; background-color:#00ced1; animation-delay:1s;"></div>
-  <div class="balloon" style="left:90%; background-color:#32cd32; animation-delay:3s;"></div>
-</body>
-</html>
+      w
