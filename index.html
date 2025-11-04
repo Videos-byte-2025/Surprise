@@ -5,17 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎉 Happy Birthday 🎂</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
+      width: 100vw;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      position: relative;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
       background-size: 400% 400%;
       animation: gradient 10s ease infinite;
-      overflow: hidden;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
     }
 
     @keyframes gradient {
@@ -24,30 +31,31 @@
       100% {background-position: 0% 50%;}
     }
 
+    /* ✅ Fullscreen background image */
+    img.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
     h1 {
       color: white;
-      font-size: 4em;
+      font-size: 3em;
       text-align: center;
       text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399;
       animation: glow 2s ease-in-out infinite alternate;
       z-index: 2;
       position: relative;
+      padding: 10px;
     }
 
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff3399; }
       to { text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 50px #33ff99; }
-    }
-
-    img {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: -1;
     }
 
     .balloon {
@@ -79,8 +87,8 @@
   </style>
 </head>
 <body>
-  <!-- 🖼️ Background image -->
-  <img src="Birthday.jpg" alt="Happy Birthday Background">
+  <!-- ✅ Background image -->
+  <img src="Birthday.jpg" alt="Birthday Background" class="bg">
 
   <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day! 💖</h1>
 
