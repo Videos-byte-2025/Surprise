@@ -20,26 +20,24 @@
       align-items: center;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       position: relative;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
-      background-size: 400% 400%;
+
+      /* ✅ Background image here */
+      background-image: url("Birthday.jpg"); /* <-- replace with your exact file name */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      /* gradient animation overlay */
+      background-blend-mode: overlay;
+      background-color: rgba(255, 255, 255, 0.1);
       animation: gradient 10s ease infinite;
+      background-attachment: fixed;
     }
 
     @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    /* ✅ Fullscreen background image */
-    img.bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -2;
+      0% {filter: brightness(1);}
+      50% {filter: brightness(1.2);}
+      100% {filter: brightness(1);}
     }
 
     h1 {
@@ -87,9 +85,6 @@
   </style>
 </head>
 <body>
-  <!-- ✅ Background image -->
-  <img src="Birthday.jpg" alt="Birthday Background" class="bg">
-
   <h1>🎉 Happy Birthday! 🎂<br>Have an Amazing Day! 💖</h1>
 
   <!-- 🎈 Balloons -->
